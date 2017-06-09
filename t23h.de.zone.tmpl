@@ -1,0 +1,42 @@
+; vim: ft=bindzone
+$ORIGIN t23h.de.
+$TTL 3600
+@	3600	IN	SOA	deimos.chaotikum.eu.	dns.chaotikum.eu.	(
+		SERIAL		; serial
+		1200		; refresh
+		120		; retry
+		604800		; expire
+		3600 )		; minimum
+
+;; DNS
+@			300	IN	NS	deimos.chaotikum.eu.
+@			300	IN	NS	nimbus.chaotikum.eu.
+
+@			300	IN	TXT	"google-site-verification=R75LadfqbGs7EzfAZ2AegjQ0eQpUF17_uc7o0p7HMUk"
+
+home			3600	IN	NS	ns1.he.net.
+home			3600	IN	NS	ns2.he.net.
+home			3600	IN	NS	ns3.he.net.
+home			3600	IN	NS	ns4.he.net.
+home			3600	IN	NS	ns5.he.net.
+
+
+@			300	IN	A	212.129.7.139
+
+;; Servers
+mars			300	IN	A	212.129.7.139
+wyntoncraft		300	IN	A	134.0.30.22
+wyntoncraft		300	IN	AAAA	2a03:2900:2:1::8c
+
+;; Mail
+@			3600	IN	MX	1	aspmx.l.google.com.
+@			3600	IN	MX	5	alt1.aspmx.l.google.com.
+@			3600	IN	MX	5	alt2.aspmx.l.google.com.
+@			3600	IN	MX	10	alt3.aspmx.l.google.com.
+@			3600	IN	MX	10	alt4.aspmx.l.google.com.
+@			3600	IN	TXT	"v=spf1 a mx include:_spf.google.com ~all"
+_dmarc			3600	IN	TXT	"v=DMARC1; p=quarantine\; pct=100\; rua=mailto:postmaster@t23h.de"
+gapps._domainkey	3600	IN	TXT	"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu8FHTOw9aZCUVueNmaSo2xUDlgKcYnEJ7Fqqu0jklGY7yCvxNR7LyvgA2fR6wV6kbRdGCrNarSKQtdUF2lPiMYAEzwHFcCIsgs7VNFgFxnFpUzu2eHEjPJDb7YeNVoRd3DCRvwkTyOGG8p/OR0nriyIF8+eGfmRiOZussDJ44QSflu9ZRa2STBUk2CgDBuG49" "m6TnMtN7Pi4NhLezkIUmxz0axOGkcSXHl4qvy2PWk3VtVS++KEi86zdh2lLP0iplYyKuWVK0vC0HxvLVtgRqUppvoiq+Vdss0N6k+sGiIvkHUhTBIt0JZCfjH30ENnqfQ0mMu83asEAqgusoVW1QwIDAQAB"
+
+;; CNAME Records
+www			300	IN	CNAME	mars

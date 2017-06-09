@@ -1,0 +1,39 @@
+; vim: ft=bindzone
+$ORIGIN qsx.re.
+$TTL 300
+@	3600	IN	SOA	deimos.chaotikum.eu.	dns.chaotikum.eu.	(
+		SERIAL		; serial
+		1200		; refresh
+		120		; retry
+		1209600		; expire
+		300 )		; minimum
+
+;; DNS
+@				IN	NS	deimos.chaotikum.eu.
+@				IN	NS	nimbus.chaotikum.eu.
+
+;; Servers
+_25._tcp.blackhole		IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_25._tcp.blackhole		IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_143._tcp.blackhole		IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_143._tcp.blackhole		IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_443._tcp.blackhole		IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_443._tcp.blackhole		IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_465._tcp.blackhole		IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_465._tcp.blackhole		IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_587._tcp.blackhole		IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_587._tcp.blackhole		IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_993._tcp.blackhole		IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_993._tcp.blackhole		IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+nimbus				IN	CNAME	nimbus.chaotikum.eu.
+
+;; Mail
+@				IN	MX	20	nimbus.chaotikum.eu.
+mail._domainkey			IN	TXT	"k=rsa;t=s;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9O5POqU6992qu0u9HPWhYRgAK1vKA+NkEyRcU6a8fVo8H2nQNICyEzDj1BqDvvEwRw8YezhlFndi/xoKIRv6paRVGXKVqZbaJy4JbG7hsExmC21PFMGbLSn6IiUFRMfZphHw3lf8WpruQSXA3sJp+CSJSUEMrQFIjlnztuZHQ+oWTct8fjwYdc1DaBunIKIw2GwLDvH" "QWvbEgISXQThfziKe1/kSvINmD+vuCe52Gf0ntTeqdbVfYztnyLEQXlhzIaQxZk6LNNqShKNs0NoL1G1nIXsufd6MRu2d/rWYXTzkYoq5wal39Pl8RbECgDzP4g0zKbs/0J7DFT1VM2aMVwIDAQAB"
+@				IN	TXT	"v=spf1 mx ip6:2001:19f0:6c00:96fd::/64 ~all"
+list				IN	MX	1	sculptor.uberspace.de.
+
+;; CNAME Records
+blackhole			IN	CNAME	blackhole.qsuscs.de.
+mars				IN	CNAME	mars.qsuscs.de.
+www				IN	CNAME	blackhole

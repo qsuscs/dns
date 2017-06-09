@@ -1,0 +1,29 @@
+; vim: ft=bindzone
+$ORIGIN qsx.dn42.
+$TTL 300
+@	3600	IN	SOA	deimos	dns	(
+		SERIAL		; serial
+		1200		; refresh
+		120		; retry
+		1209600		; expire
+		300 )		; minimum
+
+;; DNS
+@				IN	NS	deimos
+
+;; Hosts
+blackhole			IN	A	172.20.175.65
+					AAAA	fd42:7173:7800:41::1
+coruscant			IN	A	172.20.175.66
+					AAAA	fd42:7173:7800:42::1
+mars				IN	A	172.20.175.67
+					AAAA	fd42:7173:7800:43::1
+tatooine			IN	A	172.20.175.68
+					AAAA	fd42:7173:7800:44::1
+nimbus				IN	A	172.20.175.69
+					AAAA	fd42:7173:7800:45::1
+deimos				IN	A	172.20.175.70
+					AAAA	fd42:7173:7800:46::1
+
+;; Mail
+@				IN	MX	1	blackhole

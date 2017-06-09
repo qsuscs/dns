@@ -1,0 +1,20 @@
+; vim: ft=bindzone
+$ORIGIN 64/27.175.20.172.in-addr.arpa.
+$TTL 300
+@		IN	SOA	deimos.qsx.dn42.	dns.qsx.dn42.	(
+		SERIAL		; serial
+		1200		; refresh
+		120		; retry
+		1209600		; expire
+		300 )		; minimum
+
+;; DNS
+@				IN	NS	deimos.qsx.dn42.
+
+;; Hosts
+65				IN	PTR	blackhole.qsx.dn42.
+66				IN	PTR	coruscant.qsx.dn42.
+67				IN	PTR	mars.qsx.dn42.
+68				IN	PTR	tatooine.qsx.dn42.
+69				IN	PTR	nimbus.qsx.dn42.
+70				IN	PTR	deimos.qsx.dn42.

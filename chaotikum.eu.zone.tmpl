@@ -1,0 +1,34 @@
+; vim: ft=bindzone
+$ORIGIN chaotikum.eu.
+$TTL 300
+@	3600	IN	SOA	deimos	dns	(
+		SERIAL		; serial
+		1200		; refresh
+		120		; retry
+		1209600		; expire
+		300 )		; minimum
+
+;; DNS
+@				IN	NS	deimos
+@				IN	NS	nimbus
+
+_kerberos-master._tcp		IN	SRV	0 100 88	nimbus
+_kerberos-master._udp		IN	SRV	0 100 88	nimbus
+_kerberos._udp			IN	SRV	0 100 88	nimbus
+_kerberos._tcp			IN	SRV	0 100 88	nimbus
+_kerberos			IN	TXT	"CHAOTIKUM.EU"
+_kpasswd._tcp			IN	SRV	0 100 464	nimbus
+_kpasswd._udp			IN	SRV	0 100 464	nimbus
+_ldap._tcp			IN	SRV	0 100 389	nimbus
+_ntp._udp			IN	SRV	0 100 123	nimbus
+
+;; Mail
+@				IN	MX	1	nimbus
+@				IN	TXT	"v=spf1 mx ip6:2001:19f0:6c00:96fd::/64 ~all"
+lists				IN	MX	1	nimbus
+
+;; Hosts
+nimbus				IN	A	104.238.167.87
+				IN	AAAA	2001:19f0:6c01:78:94a:3630:544:5647
+deimos				IN	A	104.238.159.174
+				IN	AAAA	2001:19f0:6c01:2a0:5400:ff:fe71:788e

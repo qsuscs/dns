@@ -1,0 +1,65 @@
+;; vim: ft=bindzone
+$ORIGIN qsuscs.de.
+$TTL 3600
+@	3600	IN	SOA	deimos.chaotikum.eu. dns.chaotikum.eu.	(
+		SERIAL		; serial
+		7200		; refresh
+		900		; retry
+		604800		; expire
+		3600 )		; minimum
+
+;; DNS
+@			300	IN	NS	deimos.chaotikum.eu.
+@			300	IN	NS	nimbus.chaotikum.eu.
+
+@			300	IN	A	95.143.172.183
+@			300	IN	AAAA	2001:1a50:11:0:5f:8f:acb7:d8
+
+@			300	IN	TXT	"google-site-verification=OTYrXJSJ4xUdbkm7bcT5qL7PvBkN4tLxnvYWbXu5XAk"
+
+;; Servers
+mars			300	IN	A	212.129.7.139
+blackhole		300	IN	A	45.32.155.112
+blackhole		300	IN	AAAA	2001:19f0:6c00:96fd:5400:00ff:fe1f:db34
+_25._tcp.blackhole	300	IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_25._tcp.blackhole	300	IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_143._tcp.blackhole	300	IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_143._tcp.blackhole	300	IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_443._tcp.blackhole	300	IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_443._tcp.blackhole	300	IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_465._tcp.blackhole	300	IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_465._tcp.blackhole	300	IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_587._tcp.blackhole	300	IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_587._tcp.blackhole	300	IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+_993._tcp.blackhole	300	IN	TLSA	3 1 1 26727eacdb4bcb1ff7c51460d8bb0c54e7823a2267be5f2151acaa14a60c4144
+_993._tcp.blackhole	300	IN	TLSA	3 1 2 2a86d4205e616ca8ffb06fca20f312216054b71ea098ac33c59204b121e67db063f8c66d779b4c2dfc9fe3fd4db603ca28a34961191af6174846ee8e15fdd7f4
+
+;; Mail
+@			300	IN	MX	1	nimbus.chaotikum.eu.
+g			300	IN	MX	1	blackhole
+lists			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+schleuder		300	IN	MX	1	sculptor.uberspace.de.
+sympa			300	IN	CNAME	blackhole
+mail._domainkey		300	IN	TXT	"k=rsa;t=s;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9O5POqU6992qu0u9HPWhYRgAK1vKA+NkEyRcU6a8fVo8H2nQNICyEzDj1BqDvvEwRw8YezhlFndi/xoKIRv6paRVGXKVqZbaJy4JbG7hsExmC21PFMGbLSn6IiUFRMfZphHw3lf8WpruQSXA3sJp+CSJSUEMrQFIjlnztuZHQ+oWTct8fjwYdc1DaBunIKIw2GwLDvH" "QWvbEgISXQThfziKe1/kSvINmD+vuCe52Gf0ntTeqdbVfYztnyLEQXlhzIaQxZk6LNNqShKNs0NoL1G1nIXsufd6MRu2d/rWYXTzkYoq5wal39Pl8RbECgDzP4g0zKbs/0J7DFT1VM2aMVwIDAQAB"
+@			300	IN	TXT	"v=spf1 ip4:95.143.172.183 mx ip6:2001:19f0:6c00:96fd::/64 ~all"
+qsuscs._pka		300	IN	TXT	"v=pka1;fpr=E384009D3B54DCD321BF953295EE94A432583DB1;uri=https://qsuscs.de/32583DB1.asc"
+
+;; XMPP
+_xmpp-server._tcp.conference	300	IN	SRV	0	5	65071	qsuscs.sculptor.uberspace.de.
+_xmpp-client._tcp	300	IN	SRV	0	5	61379	qsuscs.sculptor.uberspace.de.
+_xmpp-server._tcp	300	IN	SRV	0	5	65071	qsuscs.sculptor.uberspace.de.
+
+;; CNAME Records
+abizeitung		300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+blog			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+bz			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+etherpad		300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+;g			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+git			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+gw2			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+heap			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+hg			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+rt			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+whf			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+www			300	IN	CNAME	qsuscs.sculptor.uberspace.de.
+xmpp-upload		300	IN	CNAME	qsuscs.sculptor.uberspace.de.
