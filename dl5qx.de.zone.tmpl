@@ -1,0 +1,17 @@
+; vim: ft=bindzone
+$ORIGIN dl5qx.de.
+$TTL 300
+@	3600	IN	SOA	deimos.chaotikum.eu.	dns.chaotikum.eu.	(
+		SERIAL		; serial
+		1200		; refresh
+		120		; retry
+		1209600		; expire
+		300 )		; minimum
+
+;; DNS
+@				IN	NS	deimos.chaotikum.eu.
+@				IN	NS	nimbus.chaotikum.eu.
+
+;; Mail
+@				IN	MX	1	nimbus.chaotikum.eu.
+@				IN	TXT	"v=spf1 mx ip6:2001:19f0:6c00:96fd::/64 ~all"
