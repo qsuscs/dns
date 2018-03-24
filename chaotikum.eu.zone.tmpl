@@ -22,6 +22,10 @@ _kpasswd._udp			IN	SRV	0 100 464	nimbus
 _ldap._tcp			IN	SRV	0 100 389	nimbus
 _ntp._udp			IN	SRV	0 100 123	nimbus
 
+ocean				IN	NS	ns1.digitalocean.com.
+				IN	NS	ns2.digitalocean.com.
+				IN	NS	ns3.digitalocean.com.
+
 ;; Mail
 @				IN	MX	1	nimbus
 @				IN	TXT	"v=spf1 mx ip6:2001:19f0:6c01:78::/64 ~all"
