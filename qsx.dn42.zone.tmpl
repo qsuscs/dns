@@ -10,7 +10,6 @@ $TTL 300
 
 ;; DNS
 @				IN	NS	deimos
-@				IN	NS	blackhole
 
 ;; Hosts
 blackhole			IN	A	172.20.175.65
@@ -27,4 +26,4 @@ deimos				IN	A	172.20.175.70
 					AAAA	fd42:7173:7800:46::1
 
 ;; Mail
-@				IN	MX	1	blackhole
+@				IN	MX	1	nimbus
